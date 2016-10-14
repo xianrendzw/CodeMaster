@@ -37,6 +37,8 @@
     	<module>codemaster-jvm</module>
     	<module>codemaster-scala</module>
     	<module>codemaster-web</module>
+    	<module>codemaster-java8</module>
+    	<module>codemaster-java9</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -84,6 +86,16 @@
             <dependency>
                 <groupId>com.easytoolsoft</groupId>
                 <artifactId>codemaster-scala</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>codemaster-java8</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>codemaster-java9</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- log -->
@@ -342,6 +354,12 @@
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
             </dependency>
+            <!-- scala -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
             <!-- Test -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -404,8 +422,6 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <!-- <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory> -->
         <pluginManagement>
             <plugins>
                 <plugin>
