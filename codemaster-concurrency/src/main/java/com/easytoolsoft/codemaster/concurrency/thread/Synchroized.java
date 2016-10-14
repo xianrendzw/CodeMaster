@@ -5,15 +5,15 @@ package com.easytoolsoft.codemaster.concurrency.thread;
  */
 public class Synchroized {
     public static void main(String[] args) {
-        Task1 task1 = new Task1();
-        Thread task1t1 = new Thread(() -> {
-            task1.m1();
-        }, "A");
-        Thread task1t2 = new Thread(() -> {
-            task1.m1();
-        }, "B");
-        task1t1.start();
-        task1t2.start();
+//        Task1 task1 = new Task1();
+//        Thread task1t1 = new Thread(() -> {
+//            task1.m1();
+//        }, "A");
+//        Thread task1t2 = new Thread(() -> {
+//            task1.m1();
+//        }, "B");
+//        task1t1.start();
+//        task1t2.start();
 
 //        Task2 task2 = new Task2();
 //        Thread task2t1 = new Thread(() -> task2.m4t1(), "t1");
@@ -21,11 +21,11 @@ public class Synchroized {
 //        task2t1.start();
 //        task2t2.start();
 //
-//        Task3 task3 = new Task3();
-//        Thread task3t1 = new Thread(() -> task3.m4t1(), "t1");
-//        Thread task3t2 = new Thread(() -> task3.m4t2(), "t2");
-//        task3t1.start();
-//        task3t2.start();
+        Task3 task3 = new Task3();
+        Thread task3t1 = new Thread(() -> task3.m4t1(), "t1");
+        Thread task3t2 = new Thread(() -> task3.m4t2(), "t2");
+        task3t1.start();
+        task3t2.start();
 //
 //        Task4 task4 = new Task4();
 //        Thread task4t1 = new Thread(() -> task4.m4t1(), "t1");
@@ -52,7 +52,7 @@ class Task2 {
             while (i-- > 0) {
                 System.out.println(Thread.currentThread().getName() + " : " + i);
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(0);
                 } catch (InterruptedException ie) {
                 }
             }
@@ -64,7 +64,7 @@ class Task2 {
         while (i-- > 0) {
             System.out.println(Thread.currentThread().getName() + " : " + i);
             try {
-                Thread.sleep(500);
+                Thread.sleep(0);
             } catch (InterruptedException ie) {
             }
         }
