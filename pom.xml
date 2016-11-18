@@ -39,6 +39,7 @@
     	<module>codemaster-web</module>
     	<module>codemaster-java8</module>
     	<module>codemaster-java9</module>
+    	<module>codemaster-pattern</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -96,6 +97,11 @@
             <dependency>
                 <groupId>com.easytoolsoft</groupId>
                 <artifactId>codemaster-java9</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.easytoolsoft</groupId>
+                <artifactId>codemaster-pattern</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- log -->
