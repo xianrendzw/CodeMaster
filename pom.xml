@@ -27,19 +27,20 @@
         <hamcrest-version>1.3</hamcrest-version>
     </properties>
     <modules>
-    	<module>codemaster-common</module>
-    	<module>codemaster-data</module>
-    	<module>codemaster-spring</module>
-    	<module>codemaster-mybatis</module>
-    	<module>codemaster-shiro</module>
-    	<module>codemaster-bat50question</module>
-    	<module>codemaster-concurrency</module>
-    	<module>codemaster-jvm</module>
-    	<module>codemaster-scala</module>
-    	<module>codemaster-web</module>
-    	<module>codemaster-java8</module>
-    	<module>codemaster-java9</module>
-    	<module>codemaster-pattern</module>
+        <module>codemaster-common</module>
+        <module>codemaster-data</module>
+        <module>codemaster-spring</module>
+        <module>codemaster-mybatis</module>
+        <module>codemaster-shiro</module>
+        <module>codemaster-bat50question</module>
+        <module>codemaster-concurrency</module>
+        <module>codemaster-jvm</module>
+        <module>codemaster-scala</module>
+        <module>codemaster-web</module>
+        <module>codemaster-java8</module>
+        <module>codemaster-java9</module>
+        <module>codemaster-pattern</module>
+        <module>codemaster-vertx</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -366,6 +367,12 @@
                 <artifactId>scala-library</artifactId>
                 <version>${scala.version}</version>
             </dependency>
+            <!-- vertx -->
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>3.0.0</version>
+            </dependency>
             <!-- Test -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -474,17 +481,17 @@
                     <artifactId>scala-maven-plugin</artifactId>
                     <version>3.2.2</version>
                     <executions>
-                      <execution>
-                        <goals>
-                          <goal>compile</goal>
-                          <goal>testCompile</goal>
-                        </goals>
-                      </execution>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
                     </executions>
                     <configuration>
-                      <scalaVersion>${scala.version}</scalaVersion>
+                        <scalaVersion>${scala.version}</scalaVersion>
                     </configuration>
-              </plugin>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
