@@ -18,14 +18,36 @@ public class LockTest implements Runnable {
         System.out.println(item.getValue());
     }
 
+    private static synchronized void increase3() {
+        int value = item.getValue();
+        value++;
+        item.setValue(value);
+    }
+
     @Override
     public void run() {
         for (int i = 0; i < 100000; i++) {
-            increase();
+            increase1();
         }
     }
 
-    private void increase() {
+    private void increase1() {
+        synchronized (this) {
+            int value = item.getValue();
+            value++;
+            item.setValue(value);
+        }
+    }
+
+    private void increase2() {
+        synchronized (item) {
+            int value = item.getValue();
+            value++;
+            item.setValue(value);
+        }
+    }
+
+    private void increase4() {
         synchronized (LockTest.class) {
             int value = item.getValue();
             value++;

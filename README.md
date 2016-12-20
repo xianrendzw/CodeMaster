@@ -1,3 +1,3 @@
 CodeMaster
 ==================================
-some code examples (java,scala,jvm,concurrency,spring,mybatis) for interviews
+some code examples (java,scala,jvm,concurrency,spring,mybatis,etc.)
