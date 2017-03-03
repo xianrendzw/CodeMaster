@@ -20,11 +20,12 @@
         <fasterxml-jackson-version>2.7.4</fasterxml-jackson-version>
         <slf4j-version>1.7.21</slf4j-version>
         <shiro-version>1.2.5</shiro-version>
-        <powermock-version>1.6.5</powermock-version>
         <c3p0-version>0.9.5.2</c3p0-version>
         <dbcp2-version>2.1.1</dbcp2-version>
         <druid-version>1.0.25</druid-version>
+        <powermock-version>1.6.5</powermock-version>
         <hamcrest-version>1.3</hamcrest-version>
+        <junit-version>4.12</junit-version>
     </properties>
     <modules>
         <module>codemaster-common</module>
@@ -41,6 +42,7 @@
         <module>codemaster-java9</module>
         <module>codemaster-pattern</module>
         <module>codemaster-vertx</module>
+        <module>codemaster-kotlin</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -211,28 +213,10 @@
             <!-- Spring -->
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-aop</artifactId>
+                <artifactId>spring-framework-bom</artifactId>
                 <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-aspects</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -247,28 +231,9 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-expression</artifactId>
+                <artifactId>spring-test</artifactId>
                 <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-tx</artifactId>
-                <version>${spring-version}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>cglib</groupId>
@@ -393,8 +358,8 @@
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>1.10.19</version>
+                <artifactId>mockito-core</artifactId>
+                <version>2.4.3</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -435,6 +400,12 @@
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-library</artifactId>
                 <version>${hamcrest-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.stefanbirkner</groupId>
+                <artifactId>system-rules</artifactId>
+                <version>1.16.0</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

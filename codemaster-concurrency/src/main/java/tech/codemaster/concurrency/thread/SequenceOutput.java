@@ -48,8 +48,8 @@ public class SequenceOutput {
 //        parallizedExecute();
 //        System.out.println((System.nanoTime() - startTime) / 1.0e9);
 
-        new Thread(new Task2(),"1").start();
-        new Thread(new Task2(),"2").start();
+        new Thread(new Task3(),"1").start();
+        new Thread(new Task3(),"2").start();
     }
 
     private static void parallizedExecute() {
@@ -122,6 +122,16 @@ public class SequenceOutput {
                 }
             }
             System.out.println((System.nanoTime() - startTime) / 1.0e9);
+        }
+    }
+
+    static class Task3 implements Runnable {
+        @Override
+        public void run() {
+            while (atomicCount.get() <= 10) {
+                atomicCount.addAndGet(1);
+                System.out.println("thread" + Thread.currentThread().getId() + ":" + (atomicCount.get()));
+            }
         }
     }
 }
