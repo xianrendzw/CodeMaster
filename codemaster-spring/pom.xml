@@ -91,10 +91,6 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-            <artifactId>system-rules</artifactId>
-        </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>

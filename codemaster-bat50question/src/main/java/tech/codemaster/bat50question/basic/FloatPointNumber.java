@@ -12,7 +12,7 @@ public class FloatPointNumber {
 //        System.out.println(BitConverter.getBits(0.2 + 0.2));
 //        System.out.println(BitConverter.getBits(0.4 + 0.2));
 //        System.out.println(BitConverter.getBits(0.5));
-        BigDecimal a = new BigDecimal("0.2");
+        BigDecimal a = new BigDecimal("0.203023402402342034230492409");
         BigDecimal b = new BigDecimal("0.4");
         System.out.println(a.add(b).doubleValue());
     }
